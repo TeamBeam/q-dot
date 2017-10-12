@@ -20,11 +20,11 @@ class RestaurantCard extends React.Component {
     const closedStatusCircle = {
       background: '#C01717'
     };
-    
+
     this.state.restaurantStatus === 'Closed' ? statusCircle = closedStatusCircle : statusCircle = openStatusCircle;
-    
+
     let image = this.props.restaurant.image;
-    
+
     return (
       <div className="restaurant-container">
         <div className="col s12 m7">
@@ -39,6 +39,7 @@ class RestaurantCard extends React.Component {
             <div className="card-content">
               <span className="queue-number">groups in queue: {this.props.restaurant.queues.length} </span>
               <span className="wait-time">wait time: {this.props.restaurant.total_wait - this.props.restaurant.average_wait} mins</span>
+              <span> | restaurant type: {this.props.restaurant.type} </span>
             </div>
           </div>
         </div>
