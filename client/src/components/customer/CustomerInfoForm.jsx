@@ -11,6 +11,7 @@ class CustomerInfoForm extends React.Component {
     this.getLastName = this.getLastName.bind(this);
     this.getMobile = this.getMobile.bind(this);
     this.getEmail = this.getEmail.bind(this);
+    this.getMenu = this.getMenu.bind(this);
     this.submitCustomerInfo = this.submitCustomerInfo.bind(this);
     this.state = {
       groupSize: 0,
@@ -18,7 +19,7 @@ class CustomerInfoForm extends React.Component {
       customerLastName: '',
       customerMobile: '',
       customerEmail: '',
-      currentRestaurantId: this.props.currentRestaurantId
+      currentRestaurantId: this.props.currentRestaurantId,
     };
   }
 

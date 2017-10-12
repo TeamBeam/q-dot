@@ -27,10 +27,10 @@ app.use(bodyParser.urlencoded({extended: true}));
 //checks if session already exists, if it does, adds req.session to req object
 app.use(session({
   store: new RedisStore({
-    host: process.env.REDISURL || '104.237.154.8',
+    host: process.env.REDISURL || '198.199.103.230',
     port: process.env.REDISPORT || 6379
   }),
-  secret: process.env.SESSIONSECRET || 'nyancat',
+  secret: process.env.SESSIONSECRET || 'teambeam',
   cookie: {
     maxAge: 18000000
   },
@@ -65,6 +65,7 @@ app.use((req, res, next) => {
 
 app.get('/', (req, res) => {
   if (req.session.queueInfo) {
+    // console.log('--------', req.session.queueInfo)
     res.redirect(`/customer/queueinfo?queueId=${req.session.queueInfo.queueId}`);
   } else {
     res.redirect('/customer');
