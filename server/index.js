@@ -36,7 +36,7 @@ app.use(session({
   },
   name: 'qsessionid',
   resave: false,
-  saveUnitialized: false
+  saveUninitialized: false
 }));
 
 //these middlewares initialise passport and adds req.user to req object if user has aleady been authenticated
@@ -309,6 +309,17 @@ let managerMap = {};// restaurantId: socketId
 
 io.on('connection', (socket) => {
   console.log(`${socket.id} connected`);
+
+  // Send client messages to server
+  socket.on('chat message', (message) => {
+  // Server broadcasts the message back to the client through the socket connection
+    //socket.broadcoast.emit('chat message', message);
+
+
+    io.sockets.emit('chat message', message);
+  });
+
+
 
   socket.on('disconnect', () => {
     console.log(`${socket.id} disconnected`);
