@@ -4,6 +4,9 @@
 logs
 *.log
 
+.jshintrc
+redisconfig.js
+
 # Swap Files
 *.swp
 # Runtime data
