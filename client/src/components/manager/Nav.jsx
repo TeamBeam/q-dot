@@ -12,6 +12,7 @@ const Nav = (props) => {
           <li className="active"><a href="#">Manager Home Page</a></li>
         </ul>
         <ul className="nav navbar-nav navbar-right">
+          <button className="btn btn-success navbar-btn" onClick={props.check}>Chat</button>
           <StatusSwitch status={props.status} switchStatus={props.switchStatus.bind(this)}/>
           <button className="btn btn-danger navbar-btn log-out" onClick={e => location.href = '/logout'}><i className="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logout</button>
         </ul>
